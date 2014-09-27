@@ -17,6 +17,7 @@ SRCPP = main.cpp\
 	Utilities.cpp\
 	IFactory.cpp\
 	ITrees.cpp\
+	EgammaStage2Trees.cpp\
 	EgammaStage1Stage2Trees.cpp\
 	Manager.cpp
 

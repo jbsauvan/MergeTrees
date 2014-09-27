@@ -36,12 +36,14 @@ class T3Job:
     def createScript(self):
         with open(self.outputDir+"/jobs/"+self.name+".sub", 'w') as script:
             print >>script, "#! /bin/sh"
+            print >>script, "uname -a"
             print >>script, "export SCRAM_ARCH={0}".format(self.scram_arch)
-            print >>script, "source /opt/exp_soft/cms/cmsset_default.sh "
+            print >>script, "source /cvmfs/cms.cern.ch/cmsset_default.sh "
             print >>script, "cd "+self.cmsswDir+"/src/"
             print >>script, "cmsenv"
             print >>script, "cd", self.outputDir
             print >>script, "\necho Executing job"
+            print >>script, "export X509_USER_PROXY="+os.environ["HOME"]+"/.t3/proxy.cert"
             print >>script, self.exe, self.parameters, "&>", self.outputDir+"/logs/"+self.name+".log"
 
     def prepareCommand(self):

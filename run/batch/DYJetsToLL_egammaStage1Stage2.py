@@ -40,11 +40,11 @@ mainTree.files = mainFiles
 secondaryTrees = []
 secondaryTrees.append(Tree())
 secondaryTrees[-1].name = "l1TriggerNtuplizer/l1TriggerTree"
-secondaryTrees[-1].files = ["root://polgrid4.in2p3.fr//dpm/in2p3.fr/home/cms/trivcat/store/user/jsauvan/L1_trees/Stage2Trees/DYJetsToLL_M-50_13TeV-pythia6/Fall13dr-tsg_PU40bx25_POSTLS162_V2-v1/GEN-SIM-RAW/2014_07_28/tree_stage2_*.root"]
+secondaryTrees[-1].files = ["root://polgrid4.in2p3.fr//dpm/in2p3.fr/home/cms/trivcat/store/user/jsauvan/L1_trees/Stage2Trees/DYJetsToLL_M-50_13TeV-pythia6/Fall13dr-tsg_PU40bx25_POSTLS162_V2-v1/GEN-SIM-RAW/2014_09_19/tree_stage2_*.root"]
 #
 secondaryTrees.append(Tree())
 secondaryTrees[-1].name = "l1TriggerNtuplizer/l1TriggerTree"
-secondaryTrees[-1].files = ["root://polgrid4.in2p3.fr//dpm/in2p3.fr/home/cms/trivcat/store/user/jsauvan/L1_trees/Stage1Trees/DYJetsToLL_M-50_13TeV-pythia6/Fall13dr-tsg_PU40bx25_POSTLS162_V2-v1/GEN-SIM-RAW/2014_07_28/tree_stage1_*.root"]
+secondaryTrees[-1].files = ["root://polgrid4.in2p3.fr//dpm/in2p3.fr/home/cms/trivcat/store/user/jsauvan/L1_trees/Stage1Trees/DYJetsToLL_M-50_13TeV-pythia6/Fall13dr-tsg_PU40bx25_POSTLS162_V2-v1/GEN-SIM-RAW/2014_09_19/tree_stage1_*.root"]
 
 batch = BatchLauncher()
 batch.name = "merge_eg_stage1_stage2"

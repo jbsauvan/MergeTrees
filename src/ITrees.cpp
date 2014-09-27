@@ -45,6 +45,7 @@ void ITrees::mergeTrees()
 /*****************************************************************/
 {
     resetVariables();
+    Long64_t nNotFound = 0;
     Long64_t nentries = m_mainTree->GetEntries();
     //std::cerr<<"N secondary entries = "<<m_secondaryTrees[0]->GetEntries()<<"\n";
     for(Long64_t entry=0;entry<nentries;entry++)
@@ -57,10 +58,15 @@ void ITrees::mergeTrees()
             if( (*itr)->GetEntryWithIndex(m_run, m_event)<=0 ) 
             {
                 fill = false;
-                cout<<"[WARN] Cannot find event "<<m_run<<","<<m_event<<" in secondary tree "<<(*itr)->GetName()<<"\n";
+                //cout<<"[WARN] Cannot find event "<<m_run<<","<<m_event<<" in secondary tree "<<(*itr)->GetName()<<"\n";
             }
         }
         if(fill) m_outputTree->Fill();
+        else nNotFound++;
+    }
+    if(nNotFound>0)
+    {
+        cout<<"[WARN] "<<nNotFound<<" events were not found in secondary trees \n";
     }
     m_outputTree->Write();
 }
